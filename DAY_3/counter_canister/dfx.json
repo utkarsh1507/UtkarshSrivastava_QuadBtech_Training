@@ -1,0 +1,18 @@
+{
+  "canisters": {
+    "counter_canister_backend": {
+      "main": "src/lib.rs",
+      "type": "rust",
+      "candid": "src/counter_canister_backend/counter_canister_backend.did"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "package": {
+    "name": "counter_canister",
+    "version": "0.1.0"
+  }
+}
