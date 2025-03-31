@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/voting_system_backend"
+]
+resolver = "2"

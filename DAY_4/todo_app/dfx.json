@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "todo_app_backend": {
+      "candid": "src/todo_app_backend/todo_app_backend.did",
+      "package": "todo_app_backend",
+      "type": "rust"
+    },
+    "todo_app_frontend": {
+      "dependencies": [
+        "todo_app_backend"
+      ],
+      "source": [
+        "src/todo_app_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "todo_app_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

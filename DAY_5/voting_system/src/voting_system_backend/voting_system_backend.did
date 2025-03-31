@@ -1,0 +1,34 @@
+type Vote = variant {
+    Yes;
+    No;
+    Abstain;
+};
+
+type ProposalStatus = variant {
+    Active;
+    Passed;
+    Failed;
+    Expired;
+};
+
+type Proposal = record {
+    id: nat64;
+    title: text;
+    description: text;
+    creator: principal;
+    created_at: nat64;
+    end_time: nat64;
+    votes: vec record { principal; Vote };
+    status: ProposalStatus;
+};
+
+service : {
+    create_proposal: (text, text, nat64) -> (Proposal);
+    get_proposal: (nat64) -> (opt Proposal) query;
+    get_all_proposals: () -> (vec Proposal) query;
+    vote: (nat64, Vote) -> (bool);
+    get_proposal_results: (nat64) -> (opt vec record { Vote; nat64 }) query;
+    end_proposal: (nat64) -> (opt ProposalStatus);
+    get_voter_status: (nat64) -> (opt Vote) query;
+    get_active_proposals: () -> (vec Proposal) query;
+}

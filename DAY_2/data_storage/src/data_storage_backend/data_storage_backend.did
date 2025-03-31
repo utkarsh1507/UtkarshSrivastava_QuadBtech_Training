@@ -1,0 +1,16 @@
+type Data = record {
+    text: opt text;
+    number: opt int64;
+    boolean: opt bool;
+    array: opt vec nat64;
+};
+
+service : {
+    store_data: (Data) -> (bool);
+    get_data: () -> (opt Data) query;
+    delete_data: () -> (bool);
+    get_all_data: () -> (vec record { principal; Data }) query;
+    clear_all_data: () -> (bool);
+    get_data_count: () -> (nat64) query;
+    has_data: () -> (bool) query;
+}
