@@ -13,7 +13,7 @@ contract CryptoKids {
 
     constructor() {
         owner = msg.sender;
-    }
+    }  
 
     struct Kid {
         address payable walletAddress;
